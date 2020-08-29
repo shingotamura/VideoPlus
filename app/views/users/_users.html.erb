@@ -1,0 +1,43 @@
+<body>
+
+<main role="main">
+
+  <div class="full-bg-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-6 col-sm-12 text-center">
+            <div class="brand">
+              <h1>お店に動画広告を</h1>
+              <br>
+              <h3>お店とクリエーターをつなぐ<br>動画制作マッチングアプリ</h3>
+              <br>
+              <a class="btn btn-outline-primary btn-block top-button" href="/registration">新 規 登 録</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+  
+  <% if users.any? %>
+  <ul class="list-unstyled">
+    <% users.each do |user| %>
+      <li class="media">
+        <div class="card">
+           <div class="card-header">
+             <img class="rounded img-fluid" src="<%= gravatar_url(user, { size: 200 }) %>" alt="">
+           </div>
+           <div class="card-body">
+             <P>名前:<%= user.name %></P>
+             <P>ジャンル:<%= user.genre %></P>
+             <P>自己紹介：<%= user.introduce %></P>
+             <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'View', user_path(user) %></button>
+             </div>
+           </div>
+         </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate users %>
+<% end %>

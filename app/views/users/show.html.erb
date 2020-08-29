@@ -1,0 +1,21 @@
+<div class='profile'>
+    <div class='row'>
+        <div class='col-sm-4'>
+            <div class="card">
+              <div class="card-header">
+                <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 200 }) %>" alt="">
+              </div>
+            </div>
+        </div>
+        <div class='offset-sm-2 col-sm-6'>
+            <h2>名前:   <%= @user.name %></h2><br>
+            <br>
+            <h2>プロフィール:   <%= @user.introduce %></h2><br>
+            <br>
+            <h2>得意ジャンル:   <%= @user.genre %></h2><br>
+        </div>
+    </div>
+</div>
+<div class='content'>
+    
+</div>
