@@ -1,2 +1,49 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<br>
+<div class="text-center">
+  <h1>プロフィール編集</h1>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+
+    <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class='form'>
+      <%= f.label :introduce, 'プロフィール' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="far fa-smile-wink"></i></span>
+        </div>
+        <%= f.text_field :introduce, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form'>
+      <%= f.label :genre, '得意ジャンル' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-futbol"></i></span>
+        </div>
+        <%= f.text_field :genre, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class='form'>
+      <%= f.label :phonenumber, '電話番号' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+        </div>
+        <%= f.text_field :phonenumber, class: 'form-control' %>
+      </div>
+    </div>
+    
+    
+    <br>
+    　<div class='offset-5'>
+         <%= f.submit '登録', class: 'btn btn-info btn-md' %>
+      </div>
+    <% end %>
+  </div>
+</div>

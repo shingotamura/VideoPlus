@@ -1,3 +1,5 @@
+<br>
+<br>
 <div class='profile'>
     <div class='row'>
         <div class='col-sm-4'>
@@ -7,12 +9,33 @@
               </div>
             </div>
         </div>
-        <div class='offset-sm-2 col-sm-6'>
-            <h2>名前:   <%= @user.name %></h2><br>
+        <div class='offset-sm-1 col-sm-7 row'>
+            <div class='col-sm-4'>
+               <h2>名前:   <%= @user.name %></h2>
+            </div>
+            <br>
+            <br>
+            <div class='col-sm-3'>
+             <% if current_user == @user %>
+               <%= link_to 'プロフィール編集', edit_user_path(@user), class: 'btn btn-info btn-sm' %>
+             <% end %>
+            </div>
+            <br>
+            <br>
             <br>
             <h2>プロフィール:   <%= @user.introduce %></h2><br>
             <br>
+            <br>
+            <br>
             <h2>得意ジャンル:   <%= @user.genre %></h2><br>
+            <br>
+            <br>
+            <br>
+            <h2>電話番号:   <%= @user.phonenumber %></h2><br>
+            <br>
+            <br>
+            <br>
+            <h2>メールアドレス:   <%= @user.email%></h2><br>
         </div>
     </div>
 </div>
