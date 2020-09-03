@@ -1,44 +1,24 @@
-<br>
-<br>
-<div class='profile'>
-    <div class='row'>
-        <div class='col-sm-4'>
-            <div class="card">
-              <div class="card-header">
-                <img class="rounded img-fluid" src="<%= gravatar_url(@user, { size: 200 }) %>" alt="">
-              </div>
-            </div>
-        </div>
-        <div class='offset-sm-1 col-sm-7 row'>
-            <div class='col-sm-4'>
-               <h2>名前:   <%= @user.name %></h2>
-            </div>
-            <br>
-            <br>
-            <div class='col-sm-3'>
-             <% if current_user == @user %>
-               <%= link_to 'プロフィール編集', edit_user_path(@user), class: 'btn btn-info btn-sm' %>
-             <% end %>
-            </div>
-            <br>
-            <br>
-            <br>
-            <h2>プロフィール:   <%= @user.introduce %></h2><br>
-            <br>
-            <br>
-            <br>
-            <h2>得意ジャンル:   <%= @user.genre %></h2><br>
-            <br>
-            <br>
-            <br>
-            <h2>電話番号:   <%= @user.phonenumber %></h2><br>
-            <br>
-            <br>
-            <br>
-            <h2>メールアドレス:   <%= @user.email%></h2><br>
-        </div>
+<div class="row">
+  <aside class="col-sm-4">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title"><%= @user.name %></h3>
+      </div>
+      <div class="card-body id='user_image">
+        <%= image_tag @user.img.to_s,class:'img-fluid',src:'' %>
+      </div>
     </div>
-</div>
-<div class='content'>
-    
+  </aside>
+  <div class="col-sm-8">
+    <ul class="nav nav-tabs nav-justified mb-3">
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">プロフィール</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">ポートフォリオ</a></li>
+      <li class="nav-item"><a href="<%= machine_path(@user) %>" class="nav-link <%= 'active' if current_page?(machine_path(@user)) %>">使用機材</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">過去実績</a></a></li>
+      <li class="nav-item"><a href="#" class="nav-link">フォロー</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">フォロワー</a></li>
+      <li class="nav-item"><a href="#" class="nav-link">メッセージ</a></li>
+    </ul>
+    <%= render 'users/profile_table', user: @user %>
+  </div>
 </div>

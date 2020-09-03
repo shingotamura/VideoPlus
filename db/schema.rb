@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_29_053909) do
+ActiveRecord::Schema.define(version: 2020_09_03_021838) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2020_08_29_053909) do
     t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "img"
+    t.string "adress"
+    t.string "placeofactivity"
+    t.string "hobby"
+    t.string "sex"
+    t.string "camera"
+    t.string "lens"
+    t.string "app"
   end
 
 end

@@ -1,0 +1,5 @@
+class AddPlaceofactivityToUsers < ActiveRecord::Migration[5.2]
+  def change
+    add_column :users, :placeofactivity, :string
+  end
+end

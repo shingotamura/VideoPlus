@@ -1,47 +1,23 @@
 <% if logged_in? %>
-<body>
 
-<main role="main">
+<div class="main">
 
-  <div class="full-bg-img">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-md-6 col-md-offset-6 col-sm-12 text-center">
-            <div class="brand">
-              <h1>お店に動画広告を</h1>
-              <br>
-              <h3>お店とクリエーターをつなぐ<br>動画制作マッチングアプリ</h3>
-              <br>
-              
-            </div>
+          <div class='col-md-6'>
+            <img sizes="(max-width: 200px) 200px,
+                        (max-width: 480px) 440px,
+                         800px"
+            src="/assets/camera_image.jpg" alt="">
+          </div>
+          <div class='col-md-6'>
+            <p>お店とクリエーター</p>
           </div>
         </div>
       </div>
-    </div>
-    <br>
+    
   
-  <% if @users.any? %>
-  <ul class="list-unstyled">
-    <% @users.each do |user| %>
-      <li class="media">
-        <div class="card">
-           <div class="card-header">
-             <img class="rounded img-fluid" src="<%= gravatar_url(user, { size: 200 }) %>" alt="">
-           </div>
-           <div class="card-body">
-             <P>名前:<%= user.name %></P>
-             <P>ジャンル:<%= user.genre %></P>
-             <P>自己紹介：<%= user.introduce %></P>
-             <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'View', user_path(user) %></button>
-             </div>
-           </div>
-         </div>
-      </li>
-    <% end %>
-  </ul>
-  <%= paginate @users %>
-<% end %>
+  
 
 <% else %>
 
@@ -75,9 +51,9 @@
              <img class="rounded img-fluid" src="<%= gravatar_url(user, { size: 200 }) %>" alt="">
            </div>
            <div class="card-body">
-             <P>名前:<%= user.name %></P>
-             <P>ジャンル:<%= user.genre %></P>
-             <P>自己紹介：<%= user.introduce %></P>
+             <P><span class='badge badge-secondary'>名前</span>:<%= user.name %></P>
+             <P><span class='badge badge-secondary'>ジャンル</span>:<%= user.genre %></P>
+             <P><span class='badge badge-secondary'>自己紹介</span>:<%= user.introduce %></P>
              <div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary"><%= link_to 'View', user_path(user) %></button>
              </div>

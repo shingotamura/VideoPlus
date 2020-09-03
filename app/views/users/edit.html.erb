@@ -9,15 +9,67 @@
 
     <%= form_with(model: @user, local: true) do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
+    
     <div class='form'>
-      <%= f.label :introduce, 'プロフィール' %>
+      <%= f.label :name, '名前' %>
       <div class="form-group input-group">
         <div class="input-group-prepend">
-            <span class="input-group-text"><i class="far fa-smile-wink"></i></span>
+            <span class="input-group-text"><i class="far fa-smile-beam"></i></span>
         </div>
-        <%= f.text_field :introduce, class: 'form-control' %>
+        <%= f.text_field :name, class: 'form-control' %>
       </div>
     </div>
+
+    <div class='form'>
+      <%= f.label :sex, '性別' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-user"></i></span>
+        </div>
+        <%= f.select :sex, [['男性', '男性'],['女性', '女性']], class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class='form'>
+      <%= f.label :img, 'プロフィール画像' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="far fa-smile-beam"></i></span>
+        </div>
+        <%= f.file_field :img, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form'>
+      <%= f.label :adress, '住所' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-map-marked-alt"></i></span>
+        </div>
+        <%= f.text_field :adress, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class='form'>
+      <%= f.label :phonenumber, '電話番号' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+        </div>
+        <%= f.text_field :phonenumber, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class='form'>
+      <%= f.label :hobby, '趣味' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-gamepad"></i></span>
+        </div>
+        <%= f.text_field :hobby, class: 'form-control' %>
+      </div>
+    </div>
+
 
     <div class='form'>
       <%= f.label :genre, '得意ジャンル' %>
@@ -30,12 +82,50 @@
     </div>
     
     <div class='form'>
-      <%= f.label :phonenumber, '電話番号' %>
+      <%= f.label :introduce, 'プロフィール' %>
       <div class="form-group input-group">
         <div class="input-group-prepend">
-            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+            <span class="input-group-text"><i class="far fa-smile-wink"></i></span>
         </div>
-        <%= f.text_field :phonenumber, class: 'form-control' %>
+        <%= f.text_field :introduce, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <br>
+    <br>
+    <div class="text-center">
+      <h1>使用機材編集</h1>
+    </div>
+    <br>
+
+    <div class='form'>
+      <%= f.label :camera, 'カメラ' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-camera"></i></span>
+        </div>
+        <%= f.text_field :camera, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class='form'>
+      <%= f.label :lens, 'レンズ' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-video"></i></span>
+        </div>
+        <%= f.text_field :lens, class: 'form-control' %>
+      </div>
+    </div>
+    
+    <div class='form'>
+      <%= f.label :app, '編集ソフト' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fas fa-laptop"></i></span>
+        </div>
+        <%= f.select :app, [['AdobepremirePro', 'AdobepremirePro'], ['FinalCutPro', 'FinalCutPro'], ['Imovie', 'Imovie'], ['DaVinci Resolve', 'DaVinci Resolve'], ['Inshot', 'Inshot'],
+        ['Videoleap', 'Videoleap'], ['AdobeRush', 'AdobeRush']], class: 'form-control' %>
       </div>
     </div>
     
