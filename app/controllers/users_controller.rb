@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @videoposts = @user.videoposts.order(id: :desc).page(params[:page])
+    counts(@user)
   end
 
   def new
@@ -46,10 +48,28 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-end
-
-private
+  
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+    counts(@user)
+  end
+  
+  def followers
+    @user = User.find(params[:id])
+    @followers = @user.followers.page(params[:page])
+    counts(@user)
+  end
+  
+  def profiles
+    @user = User.find(params[:id])
+  end
+  
+  private
 
 def user_params
-  params.require(:user).permit(:name, :email, :password, :password_confirmation, :introduce, :genre, :phonenumber, :adress, :img, :placeofactivity, :hobby, :sex, :camera, :lens, :app)
+  params.require(:user).permit(:name, :email, :password, :password_confirmation, :introduce, :genre, :phonenumber, :adress, :img, :placeofactivity, :hobby, :sex, :camera, :lens, :app )
 end
+
+end
+

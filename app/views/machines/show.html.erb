@@ -2,7 +2,7 @@
   <aside class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title"><%= @user.name %></h3>
+        <h3 class="card-title text-center"><%= @user.name %></h3>
       </div>
       <div class="card-body id='user_image">
         <%= image_tag @user.img.to_s,class:'img-fluid',src:'' %>
@@ -11,12 +11,11 @@
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">プロフィール</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">ポートフォリオ</a></li>
+      <li class="nav-item"><a href="<%= profiles_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(profiles_user_path(@user)) %>">プロフィール</a></li>
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">ポートフォリオ</a></li>
       <li class="nav-item"><a href="<%= machine_path(@user) %>" class="nav-link <%= 'active' if current_page?(machine_path(@user)) %>">使用機材</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">過去実績</a></a></li>
-      <li class="nav-item"><a href="#" class="nav-link">フォロー</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">フォロワー</a></li>
+      <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー <span class='badge badge-secondary'><%= @count_followings %></span></a></li>
+      <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー <span class='badge badge-secondary'><%= @count_followers %></span></a></li>
       <li class="nav-item"><a href="#" class="nav-link">メッセージ</a></li>
     </ul>
     <%= render 'machines/machine_table', user: @user %>

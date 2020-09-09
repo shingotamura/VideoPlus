@@ -1,0 +1,33 @@
+<ul class="list-unstyled">
+    <% videoposts.each do|videopost|%>
+    <li class="media mb-3">
+        
+        <div class="media-body">
+            <body style='margin: 15px;'>
+               <table class='table table-striped table-bordered'>
+                   <tr>
+                       <th class='text-left'>タイトル</th>
+                       <td class='text-left'><%= videopost.youtube_title %></td>
+                   </tr>
+               </table>
+            </body>
+            <div>
+                <p class="mb-0"><iframe width="560" height="315" src="https://www.youtube.com/embed/<%= videopost.youtube_url[-11..-1] %>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+                
+            </div>
+            <div class="row">
+                
+                <div class="col-sm-3">
+                <%if current_user == videopost.user%>
+                 <%=link_to 'Delete', videopost, method: :delete,data:{confilm:'You sure?'},class:"btn btn-danger btn-sm"%>
+                <%end%>
+                </div>
+                
+            </div>
+            
+            
+        </div>
+    </li>
+    <%end%>
+    <%=paginate videoposts%>
+</ul>

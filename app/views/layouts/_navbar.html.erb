@@ -1,5 +1,5 @@
 <header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-dark bg-info">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="/">VideoPlus</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
@@ -14,6 +14,7 @@
              <ul class='dropdown-menu dropdown-menu-right'>
                <li class='dropdown-item'><%= link_to 'My page', user_path(current_user) %></li>
                <li class='dropdown-item'><%= link_to 'プロフィール編集', edit_user_path(current_user) %></li>
+               <li class='dropdown-item'><%= link_to 'ポートフォリオ編集', new_videopost_path %></li>
                <li class="dropdown-divider"></li>
                <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
              </ul>

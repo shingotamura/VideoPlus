@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_03_021838) do
+ActiveRecord::Schema.define(version: 2020_09_08_041211) do
+
+  create_table "relationship_of_follows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "follow_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["follow_id"], name: "index_relationship_of_follows_on_follow_id"
+    t.index ["user_id", "follow_id"], name: "index_relationship_of_follows_on_user_id_and_follow_id", unique: true
+    t.index ["user_id"], name: "index_relationship_of_follows_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -31,4 +41,16 @@ ActiveRecord::Schema.define(version: 2020_09_03_021838) do
     t.string "app"
   end
 
+  create_table "videoposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "youtube_url"
+    t.string "youtube_title"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_videoposts_on_user_id"
+  end
+
+  add_foreign_key "relationship_of_follows", "users"
+  add_foreign_key "relationship_of_follows", "users", column: "follow_id"
+  add_foreign_key "videoposts", "users"
 end

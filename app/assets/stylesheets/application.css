@@ -13,3 +13,16 @@
  *= require_tree .
  *= require_self
  */
+
+.horizontal-lists {
+    display: flex;
+}
+.horizontal-lists > li {
+    width: 25%;
+}
+
+.main-img {
+    background-image: url("/assets/camera_photo.jpg");
+    background-size: cover;
+}
+
