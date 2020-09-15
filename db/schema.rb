@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_041211) do
+ActiveRecord::Schema.define(version: 2020_09_10_030646) do
 
   create_table "relationship_of_follows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_09_08_041211) do
     t.string "camera"
     t.string "lens"
     t.string "app"
+    t.string "insta_url"
   end
 
   create_table "videoposts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

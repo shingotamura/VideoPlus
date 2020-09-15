@@ -42,7 +42,7 @@ class UsersController < ApplicationController
     
     if @user.update(user_params)
       flash[:success] = "プロフィールを更新しました。"
-      redirect_to @user
+      redirect_to profiles_user_path(@user)
     else
       flash.now[:danger] = "プロフィールは更新されませんでした。"
       render :edit

@@ -1,20 +1,83 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<body class='main-img'>
+<% if logged_in? %>
+  <body class='main-img'>
   
 </body>
-<div class="title">
+<div class="cover">
+  <div class='full-bg-img'>
       <div class="container">
         <div class="row">
           <div class="col-md-6 offset-7 col-sm-12 text-center">
             <div class="brand">
-              <h1 class='main_font text-light'>お店に動画広告をPlus</h1>
+              <h1 class='main_font text-light' style='font-weight: bold;'>VideoPlusで広告を</h1>
+              <br>
+              <h3 class='text-light'>お店とクリエーターをつなぐ<br>動画制作マッチングアプリ</h3>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<br>
+<br>
+<div class='service-section'>
+  <h1 class='text-center'>簡単３ステップ</h1>
+  <hr color='black'>
+  <br>
+  <br>
+  <br>
+   <div class='container'>
+     <div class='row'>
+       <div class="col-md-4 pc">
+            <h3 style="height: 90px;">
+              <img src='/assets/pc_icom.png' alt='パソコン' class="material-icons md-36" widht='50px' height='50px'>
+              <p class='three-titles' style=font-weight:bold;>簡単登録</p>
+            </h3>
+            <p class="service-summary content">
+              簡単な個人情報を登録するだけ！１分で登録して、すぐにクリエーターを探せます！
+            </p>
+        </div>
+        <div class="col-md-4 man">
+            <h3 style="height: 90px;">
+              <img src='/assets/man_icom.png' alt='クリエーター' class="material-icons md-36" widht='50px' height='50px'>
+              <p class='three-titles' style=font-weight:bold;>クリエーターを探す</p>
+            </h3>
+            <p class="service-summary content">
+              あなたの求めるジャンルを得意とするクリエーターを探すことができます！クリエーターは得意なジャンルとポートフォリオを登録しているので、
+              お気に入りのテイストの動画が作れるクリエーターをフォロー。そしてInstagramからメッセージを送ってみよう！
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3 style="height: 90px;">
+              <img src='/assets/camera_icom.png' alt='カメラ' class="material-icons md-36" widht='50px' height='50px'>
+              <p class='three-titles' style=font-weight:bold;>撮影開始</p>
+            </h3>
+            <p class="service-summary content">
+              Instagramでやりとりをしてマッチングが成立したら、実際に撮影開始です！
+            </p>
+        </div>
+     </div>
+   </div>
+   <br>
+   <br>
+  
+</div>
+
+
+
+
+
+<% else %>
+<body class='main-img'>
+  
+</body>
+<div class="cover">
+  <div class='full-bg-img'>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-7 col-sm-12 text-center">
+            <div class="brand">
+              <h1 class='main_font text-light'>VideoPlusで広告を</h1>
               <br>
               <h3 class='text-light'>お店とクリエーターをつなぐ<br>動画制作マッチングアプリ</h3>
               <br>
@@ -23,7 +86,53 @@
           </div>
         </div>
       </div>
+  </div>
 </div>
-<div class=''>
-  
+<br>
+<br>
+<div class='service-section'>
+  <h1 class='text-center'>簡単３ステップ</h1>
+  <hr color='black'>
+  <br>
+  <br>
+  <br>
+   <div class='container'>
+     <div class='row'>
+       <div class="col-md-4 pc">
+            <h3 style="height: 90px;">
+              <img src='/assets/pc_icom.png' alt='パソコン' class="material-icons md-36" widht='50px' height='50px'>
+              <p>簡単登録</p>
+            </h3>
+            <p class="service-summary content">
+              簡単な個人情報を登録するだけ！１分で登録して、すぐにクリエーターを探せます！
+            </p>
+        </div>
+        <div class="col-md-4 man">
+            <h3 style="height: 90px;">
+              <img src='/assets/man_icom.png' alt='クリエーター' class="material-icons md-36" widht='50px' height='50px'>
+              <p>クリエーターを探す</p>
+            </h3>
+            <p class="service-summary content">
+              あなたの求めるジャンルを得意とするクリエーターを探すことができます！クリエーターは得意なジャンルとポートフォリオを登録しているので、
+              お気に入りのテイストの動画が作れるクリエーターをフォロー。そしてInstagramからメッセージを送ってみよう！
+            </p>
+        </div>
+        <div class="col-md-4">
+            <h3 style="height: 90px;">
+              <img src='/assets/camera_icom.png' alt='カメラ' class="material-icons md-36" widht='50px' height='50px'>
+              <p>撮影開始</p>
+            </h3>
+            <p class="service-summary content">
+              Instagramでやりとりをしてマッチングが成立したら、実際に撮影開始です！
+            </p>
+        </div>
+     </div>
+   </div>
+   <br>
+   <br>
+   <div class='text-center'>
+      <%= link_to '新規登録', signup_path, class: 'btn btn-lg btn-info' %>
+   </div>
 </div>
+
+<% end %>

@@ -5,7 +5,12 @@
         <h3 class="card-title text-center"><%= @user.name %></h3>
       </div>
       <div class="card-body id='user_image">
-        <%= image_tag @user.img.to_s,class:'img-fluid',src:'' %>
+        <% if @user.img? %>
+           <%= image_tag @user.img.to_s,class:'img-fluid',src:'' %>
+        <% else %>
+           <image src="/assets/default.png" class="icon" alt="ユーザーアイコン">
+        <% end%>
+        
       </div>
     </div>
     <%= render 'relationship_of_follows/follow_button', user: @user %>
@@ -17,7 +22,6 @@
       <li class="nav-item"><a href="<%= machine_path(@user) %>" class="nav-link <%= 'active' if current_page?(machine_path(@user)) %>">使用機材</a></li>
       <li class="nav-item"><a href="<%= followings_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followings_user_path(@user)) %>">フォロー <span class='badge badge-secondary'><%= @count_followings %></span></a></li>
       <li class="nav-item"><a href="<%= followers_user_path(@user) %>" class="nav-link <%= 'active' if current_page?(followers_user_path(@user)) %>">フォロワー <span class='badge badge-secondary'><%= @count_followers %></span></a></li>
-      <li class="nav-item"><a href="#" class="nav-link">メッセージ</a></li>
     </ul>
     <%= render 'videoposts/videoposts', videoposts: @videoposts %>
   </div>

@@ -39,6 +39,16 @@
         <%= f.file_field :img, class: 'form-control' %>
       </div>
     </div>
+    
+    <div class='form'>
+      <%= f.label :insta_url, 'Instagramアカウント' %>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text"><i class="fab fa-instagram"></i></span>
+        </div>
+        <%= f.text_field :insta_url, class: 'form-control' %>
+      </div>
+    </div>
 
     <div class='form'>
       <%= f.label :adress, '住所' %>

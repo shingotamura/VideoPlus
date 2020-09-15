@@ -4,17 +4,22 @@
    <li class='media'>
      <div class='container'>
        <div class='row'>
-         <div class='col-xs-6 col-sm-4 col-md-3'>
-           <div class='card border-bottom border-top'>
-             <%= image_tag user.img.to_s,class:'img-fluid',src:'' %>
-             <div class='card-body m-0 p-0 border-top text-center'>
-               <%= user.name %>
-               <%= link_to 'profile', user_path(user) %>
-               </table>
-             </div>
+            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
+              <div class="card-index">
+                   <div class="card-header">
+                    <h3 class="card-title text-center">
+                       <%= link_to user.name,profiles_user_path(user) %>
+                    </h3> 
+                   </div>
+                 <div class="card-body id='user_image">
+                     <% if user.img? %>
+                       <%= image_tag user.img.to_s,class:'img-fluid',src:'' %>
+                     <% else %>
+                       <image src="/assets/default.png" class="icon-index" alt="ユーザーアイコン">
+                     <% end%>
+                 </div>
+               </div>
            </div>
-         </div>
-       </div>
      </div>
    </li>
   <% end %>
